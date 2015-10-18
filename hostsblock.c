@@ -48,19 +48,23 @@ int get_domain(char *rule, char *domain) {
 				domain[i] = *rule;	
 				++i;
 				state = DOMAIN_ALNUM;
-			} else if (*rule == '-') {
+				break;
+			}
+			switch (*rule) {
+			case '-':
 				domain[i] = *rule;
 				++i;
 				state = DOMAIN_HYPHEN;
-			} else if (*rule == '.') {
+				break;
+			case '.':
 				domain[i] = *rule;
 				++i;
 				state = DOMAIN_PERIOD;
-			} else if (*rule == '^'
-				|| *rule == '/'
-				|| *rule == ':') {
+				break;
+			case '^':
 				state = DELIM;
-			} else {
+				break;
+			default:
 				return 1;
 			}
 			break;
@@ -69,7 +73,9 @@ int get_domain(char *rule, char *domain) {
 				domain[i] = *rule;
 				++i;
 				state = DOMAIN_ALNUM;
-			} else if (*rule == '-') {
+				break;
+			}
+			if (*rule == '-') {
 				domain[i] = *rule;
 				++i;
 				state = DOMAIN_HYPHEN;
