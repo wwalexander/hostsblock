@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdio.h>
 
 /* Length limit for domain names is 253 characters */
