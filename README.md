@@ -24,4 +24,4 @@ Usage
 
     hostsblock [LIST]
 
-If the list argument is [code]-[/code], hostsblock will read from stdin.
+If the list argument is `-`, hostsblock will read from stdin.
