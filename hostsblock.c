@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 /* Length limit for domain names is 253 characters */
 #define MAX_DOMAIN_LENGTH 254
@@ -111,12 +112,12 @@ int main(int argc, char **argv) {
 	char rule[MAX_DOMAIN_RULE_LENGTH];
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
-	if (argc > 2) {
+	if (argc != 2) {
 		fprintf(stderr, "usage: %s list\n", argv[0]);
 		return 1;
 	}
 
-	if (argc < 2) list = stdin;
+	if (!strncmp(argv[1], "-", 2)) list = stdin;
 	else list = fopen(argv[1], "r");
 
 	if (list == NULL) {
