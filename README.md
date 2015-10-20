@@ -23,3 +23,5 @@ Usage
 -----
 
     hostsblock [LIST]
+
+If the list argument is [code]-[/code], hostsblock will read from stdin.
