@@ -107,23 +107,25 @@ int get_domain(char *rule, char *domain) {
 
 int main(int argc, char **argv) {
 	FILE *list = NULL;
+	char rule[MAX_DOMAIN_RULE_LENGTH];
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
-	if (argc != 2) {
+	if (argc > 2) {
 		fprintf(stderr, "usage: %s list\n", argv[0]);
 		return 1;
 	}
 
-	list = fopen(argv[1], "r");
+	if (argc < 2) list = stdin;
+	else list = fopen(argv[1], "r");
 
 	if (list == NULL) {
 		perror("error opening list file");
 		return 1;
 	}
 
-	while (!feof(list) && !ferror(list)) {
-		char rule[MAX_DOMAIN_RULE_LENGTH];
+	while (1) {
 		fgets(rule, MAX_DOMAIN_RULE_LENGTH, list);
+		if (feof(list) || ferror(list)) break;
 
 		if (!get_domain(rule, domain)) {
 			printf("127.0.0.1\t%s\n", domain);
