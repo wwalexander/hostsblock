@@ -24,4 +24,13 @@ Usage
 
     hostsblock [LIST]
 
-If the list argument is `-`, hostsblock will read from stdin.
+If the list argument is `-`, hostsblock will read from stdin. For example,
+
+    curl -s https://www.fanboy.co.nz/r/fanboy-ultimate.txt | hostsblock -
+
+If you had your original hosts file at /etc/hosts~, you could fetch an AdBlock
+list, read the hosts file entries from it with hostsblock, and concatenate the
+original hosts file with the ad-blocking entries to create the actual hosts
+file:
+
+    curl https://www.fanboy.co.nz/r/fanboy-ultimate.txt | hostsblock - | cat /etc/hosts~ - > /etc/hosts
