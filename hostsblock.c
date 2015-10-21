@@ -16,7 +16,8 @@ enum state {
 	DELIM
 };
 
-int get_domain(char *rule, char *domain) {
+int get_domain(char *rule, char *domain)
+{
 	enum state state = INIT;
 	int i = 0;
 
@@ -107,7 +108,8 @@ int get_domain(char *rule, char *domain) {
 	return 1;
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
 	FILE *list = NULL;
 	char rule[MAX_DOMAIN_RULE_LENGTH];
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
