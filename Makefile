@@ -1,4 +1,3 @@
-CC=clang
 CFLAGS=-std=c89 -O3 -Wpedantic -Werror
 
 all: hostsblock
