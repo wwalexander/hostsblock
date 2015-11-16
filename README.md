@@ -22,7 +22,7 @@ Building
 Usage
 -----
 
-    hostsblock [LIST]
+    hostsblock list
 
 If the list argument is `-`, hostsblock will read from stdin. For example,
 
