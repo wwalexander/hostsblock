@@ -132,7 +132,7 @@ int main(int argc, char **argv)
 		if (feof(list) || ferror(list)) break;
 
 		if (!get_domain(rule, domain)) {
-			printf("127.0.0.1\t%s\n", domain);
+			printf("0 \t%s\n", domain);
 		}
 	}
 
