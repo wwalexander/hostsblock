@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
 	if (argc != 2) {
-		fprintf(stderr, "usage: %s list\n", argv[0]);
+		fprintf(stderr, "usage: %s [filterlist]\n", argv[0]);
 		return 1;
 	}
 
