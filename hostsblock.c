@@ -114,12 +114,12 @@ int main(int argc, char **argv)
 	char rule[MAX_DOMAIN_RULE_LENGTH];
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
-	if (argc != 2) {
+	if (argc > 2) {
 		fprintf(stderr, "usage: %s [filterlist]\n", argv[0]);
 		return 1;
 	}
-
-	if (!strncmp(argv[1], "-", 2)) list = stdin;
+	
+	if (argc < 2 || !strncmp(argv[1], "-", 2)) list = stdin;
 	else list = fopen(argv[1], "r");
 
 	if (list == NULL) {

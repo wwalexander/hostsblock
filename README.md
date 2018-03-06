@@ -24,7 +24,8 @@ Usage
 
     hostsblock [filterlist]
 
-If the filterlist argument is `-`, hostsblock will read from stdin. For example,
+If the filterlist argument is `-` or omitted, hostsblock will read from stdin.
+For example,
 
     curl -s https://www.fanboy.co.nz/r/fanboy-ultimate.txt | hostsblock -
 
@@ -33,4 +34,6 @@ list, read the hosts file entries from it with hostsblock, and concatenate the
 original hosts file with the ad-blocking entries to create the actual hosts
 file:
 
-    curl -s https://www.fanboy.co.nz/r/fanboy-ultimate.txt | hostsblock - | cat /etc/hosts~ - > /etc/hosts
+    curl -s https://www.fanboy.co.nz/r/fanboy-ultimate.txt |
+    hostsblock |
+    cat /etc/hosts~ - > /etc/hosts
