@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
 	if (argc > 2) {
-		fprintf(stderr, "usage: %s [filterlist]\n", argv[0]);
+		fprintf(stderr, "usage: %s filter list\n", argv[0]);
 		return 1;
 	}
 	
@@ -123,7 +123,7 @@ int main(int argc, char **argv)
 	else list = fopen(argv[1], "r");
 
 	if (list == NULL) {
-		perror("error opening list file");
+		perror("error opening filter list");
 		return 1;
 	}
 
@@ -137,7 +137,7 @@ int main(int argc, char **argv)
 	}
 
 	if (ferror(list)) {
-		perror("error reading list file");
+		perror("error reading filterlist");
 		return 1;
 	}
 

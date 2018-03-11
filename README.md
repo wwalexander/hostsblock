@@ -22,7 +22,7 @@ Building
 Usage
 -----
 
-    hostsblock [filterlist]
+    hostsblock filterlist
 
 If the filterlist argument is `-` or omitted, hostsblock will read from stdin.
 For example,
