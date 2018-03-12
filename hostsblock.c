@@ -49,19 +49,19 @@ int get_domain(char *rule, char *domain)
 		case DOMAIN_ALNUM:
 			if (isalnum(*rule)) {
 				domain[i] = *rule;	
-				++i;
+				i++;
 				state = DOMAIN_ALNUM;
 				break;
 			}
 			switch (*rule) {
 			case '-':
 				domain[i] = *rule;
-				++i;
+				i++;
 				state = DOMAIN_HYPHEN;
 				break;
 			case '.':
 				domain[i] = *rule;
-				++i;
+				i++;
 				state = DOMAIN_PERIOD;
 				break;
 			case '^':
@@ -80,7 +80,7 @@ int get_domain(char *rule, char *domain)
 			}
 			if (*rule == '-') {
 				domain[i] = *rule;
-				++i;
+				i++;
 				state = DOMAIN_HYPHEN;
 			} else {
 				return 1;
@@ -89,7 +89,7 @@ int get_domain(char *rule, char *domain)
 		case DOMAIN_PERIOD:
 			if (isalnum(*rule)) {
 				domain[i] = *rule;
-				++i;
+				i++;
 				state = DOMAIN_ALNUM;
 			} else {
 				return 1;
