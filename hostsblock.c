@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
 	if (argc > 2) {
-		fprintf(stderr, "usage: %s filter list\n", argv[0]);
+		fprintf(stderr, "usage: hostsblock list_file\n", argv[0]);
 		return 1;
 	}
 	
@@ -137,7 +137,7 @@ int main(int argc, char **argv)
 	}
 
 	if (ferror(list)) {
-		perror("error reading filterlist");
+		perror("error reading filter list");
 		return 1;
 	}
 
