@@ -1,4 +1,4 @@
-CFLAGS=-std=c89 -O3 -Wpedantic -Werror
+CFLAGS=-ansi -O3 -Wpedantic -Werror
 
 all: hostsblock
 
