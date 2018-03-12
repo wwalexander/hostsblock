@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
 	if (argc > 2) {
-		fputs("usage: hostsblock list_file", stderr);
+		fputs("usage: hostsblock file", stderr);
 		return 1;
 	}
 	

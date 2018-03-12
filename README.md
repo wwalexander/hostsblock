@@ -22,10 +22,10 @@ Building
 Usage
 -----
 
-    hostsblock filter_list
+    hostsblock file
 
-If the filter list argument is `-` or omitted, hostsblock will read from stdin.
-For example,
+If the file argument is `-` or omitted, hostsblock will read from stdin. For
+example,
 
     curl -s https://www.fanboy.co.nz/r/fanboy-ultimate.txt | hostsblock -
 
