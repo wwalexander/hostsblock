@@ -110,7 +110,7 @@ int get_domain(char *rule, char *domain)
 
 int main(int argc, char **argv)
 {
-	FILE *list = NULL;
+	FILE *list;
 	char rule[MAX_DOMAIN_RULE_LENGTH];
 	char domain[MAX_DOMAIN_LENGTH] = { 0 };
 
