@@ -1,0 +1,26 @@
+## Malware
+https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
+https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt
+@https://www.malwaredomainlist.com/hostslist/hosts.txt
+&http://mirror1.malwaredomains.com/files/immortal_domains.txt
+https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt
+
+## Tracking
+#https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+#https://easylist.to/easylist/easyprivacy.txt
+
+## Annoyances
+#https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
+#https://filters.adtidy.org/extension/chromium/filters/14.txt
+#https://fanboy.co.nz/fanboy-cookiemonster.txt
+#https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt
+
+## Ads
+#https://easylist-downloads.adblockplus.org/easylist.txt
+#https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt
+#https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+
+## Exceptions (not currently supported)
+#https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
+#https://easylist-downloads.adblockplus.org/exceptionrules.txt
+#&https://raw.githubusercontent.com/EFForg/privacybadger/master/src/data/yellowlist.txt
