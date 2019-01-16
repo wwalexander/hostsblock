@@ -128,8 +128,8 @@ int main(int argc, char **argv)
 	}
 
 	while (1) {
-		fgets(rule, MAX_DOMAIN_RULE_LENGTH, list);
-		if (feof(list) || ferror(list)) break;
+		char *c = fgets(rule, MAX_DOMAIN_RULE_LENGTH, list);
+		if (c == NULL || feof(list) || ferror(list)) break;
 
 		if (!get_domain(rule, domain)) {
 			printf("0\t%s\n", domain);
