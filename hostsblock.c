@@ -64,6 +64,7 @@ int get_domain(char *rule, char *domain)
 				i++;
 				state = DOMAIN_PERIOD;
 				break;
+			case '|':
 			case '^':
 				state = DELIM;
 				break;
