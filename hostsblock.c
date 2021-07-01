@@ -133,7 +133,7 @@ int main(int argc, char **argv)
 		if (c == NULL || feof(list) || ferror(list)) break;
 
 		if (!get_domain(rule, domain)) {
-			printf("0\t%s\n", domain);
+			printf("0.0.0.0\t%s\n", domain);
 		}
 	}
 
