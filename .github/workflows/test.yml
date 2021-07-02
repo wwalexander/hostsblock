@@ -14,7 +14,7 @@ jobs:
         run: |
          make
          mkdir -p Test
-         curl -s https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt |  ./hostsblock > ./Test/hosts
+         curl -s https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt |  ./hostsblock - > ./Test/hosts
          sudo rm hostsblock
         env:
           key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
