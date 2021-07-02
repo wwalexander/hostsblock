@@ -1,0 +1,31 @@
+name: test
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+         make
+         mkdir -p Test
+         curl -s https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt |  hostsblock > ./Test/hosts
+         sudo rm hostsblock
+        env:
+          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+      - name: Commit files # transfer the new html files back into the repository
+        run: |
+         git config --local user.name "Test"
+         git add .
+         git commit -m "test"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         force: true
+
